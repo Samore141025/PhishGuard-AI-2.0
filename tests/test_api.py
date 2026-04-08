@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = "http://127.0.0.1:8000/analyze-email"
+url = "http://localhost:8080/analyze-email"
 payload = {
     "sender": "support@bank-verify.com",
     "subject": "Urgent: Your account is suspended",

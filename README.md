@@ -19,13 +19,13 @@ The system combines rule-based detectors (for urgency language, threats, suspici
 ## Usage
 1. **Run the API server**:
    ```bash
-   uvicorn api.main:app --reload --port 8000
+   uvicorn api.main:app --reload --host localhost --port 8080
    ```
 2. **Access the Frontend**:
-   Navigate to `http://localhost:8000` in your web browser.
+   Navigate to `http://localhost:8080` in your web browser.
 
 3. **API Endpoint**:
-   Send a POST request to `http://localhost:8000/analyze-email` with JSON:
+   Send a POST request to `http://localhost:8080/analyze-email` with JSON:
    ```json
    {
      "subject": "Urgent Check",
@@ -38,9 +38,9 @@ The system combines rule-based detectors (for urgency language, threats, suspici
 ## Cloudflare Tunnel
 To expose your local environment for testing or remote access:
 ```bash
-cloudflared tunnel --url http://localhost:8000
+cloudflared tunnel --url http://localhost:8080
 ```
-Note: Ensure your uvicorn server is running on the same port (default 8000).
+Note: Ensure your uvicorn server is running on the same port (default 8080).
 
 ## Testing
 Run unit tests: `python -m unittest tests/test_analyzer.py`
